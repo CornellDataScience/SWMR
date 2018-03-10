@@ -1,6 +1,11 @@
 import collections
 import random
 import time
+import pandas as pd
+import numpy as np
+import tensorflow as tf
+import pandas as pd
+from sklearn.preprocessing import LabelEncoder
 
 class WordModel:
 
