@@ -38,17 +38,18 @@ class WordModel:
         # normalizing each embed
         self.normalized_embeddings = embeddings / self.norm
 
-def read_data(filename):
+def read_data(filename, row):
     '''input filename
         return string: all the text (string); concated: list of string;
         label; list(set(string)): all the unique words
     '''
     dataset = pd.read_csv(filename)
+    dataset = dataset.ix[1:row, :]
     rows = dataset.shape[0]
     print('there are', rows, 'total rows')
 
     # last column is our target
-    label = dataset.ix[:, 2].values
+    label = dataset.ix[:, -1:].values
 
     # get second and third column values
     concated = []
