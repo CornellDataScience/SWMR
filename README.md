@@ -5,4 +5,5 @@ Our long-term goal is to analyze text sentiment over time and how they relates t
 For this semester, we are focusing on just sentiment analysis. Our goal for this semester is to find a classifier with a text embeddings which would achive better accuracy in sentiment classification.   
 
 ## Data: movie reviews on Rotten Tomato 
-![ScreenShot](~/Desktop/data.png)
+![Data](../master/present/data.png)
+
