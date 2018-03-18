@@ -71,7 +71,7 @@ class Word2Vec(object):
 
 
 if __name__ == '__main__':
-    # model = Glove()
-    model = Word2Vec()
+    model = Glove()
+    #model = Word2Vec()
     print(model.vectorize('person'))
     print(model.vectorize('CDS'))
