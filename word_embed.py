@@ -16,7 +16,7 @@ class Glove(object):
         dict        : dictionary that maps vocabulary to the index
     """
     def __init__(self, pre_trained=True):
-        self.GLOVE_PATH = os.path.dirname(os.getcwd()) + '/QuACC/models/glove.840B.300d.zip'
+        self.GLOVE_PATH = os.path.dirname(os.getcwd()) + '/models/glove.840B.300d.zip'
         self.GLOVE_FILE = 'glove.840B.300d.txt'  # can change it to glove.6B.50d.txt, glove.6B.100d.txt, glove.6B.200d.txt
         # load the file
         if pre_trained:

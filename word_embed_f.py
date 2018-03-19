@@ -6,7 +6,7 @@ import csv
 import gensim
 
 
-class Glove(object):
+class Glove_x(object):
     """Pretrained Glove vectorizer
     Attributes:
         GLOVE_PATH  : path to the zipped file
@@ -44,6 +44,23 @@ class Glove(object):
         else:
             return np.zeros(300)
 
+    def sentence_vectorize(self, s):
+        # words = str(s).lower()
+        # words = word_tokenize(words)
+        # words = [w for w in words if not w in stop_words]
+        # words = [w for w in words if w.isalpha()]
+        M = []
+        if word in self.dict:
+            index = self.dict[word]
+            return self.model[index]
+        else:
+            return np.zeros(300)
+        M = np.array(M)
+        v = M.sum(axis=0)
+        if type(v) != np.ndarray:
+            return np.zeros(300)
+        return v / np.sqrt((v ** 2).sum())
+
 
 class Word2Vec(object):
     """Pretrained word2vec vectorizer
@@ -69,22 +86,7 @@ class Word2Vec(object):
         else:
             return np.zeros(300)
 
-    def sentence_vectorize(self, words):
-        words = str(s).lower().decode('utf-8')
-        words = word_tokenize(words)
-        words = [w for w in words if not w in stop_words]
-        words = [w for w in words if w.isalpha()]
-        M = []
-        for w in words:
-            try:
-                M.append(embeddings_index[w])
-            except:
-                continue
-        M = np.array(M)
-        v = M.sum(axis=0)
-        if type(v) != np.ndarray:
-            return np.zeros(300)
-        return v / np.sqrt((v ** 2).sum())
+
 
 
 if __name__ == '__main__':
