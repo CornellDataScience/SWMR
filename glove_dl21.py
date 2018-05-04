@@ -17,7 +17,7 @@ def get_glove_m(docs, labels):
     # integer encode the documents
     encoded_docs = t.texts_to_sequences(docs)
     # pad documents to a max length of 4 words
-    max_length = 400
+    max_length = 100
     padded_docs = pad_sequences(encoded_docs, maxlen=max_length, padding='post')
     # load the whole embedding into memory
     embeddings_index = dict()
@@ -47,7 +47,7 @@ def padded_doc(docs):
     # integer encode the documents
     encoded_docs = t.texts_to_sequences(docs)
     # pad documents to a max length of 4 words
-    max_length = 400
+    max_length = 100
     padded_docs = pad_sequences(encoded_docs, maxlen=max_length, padding='post')
     # print(padded_docs)
     return padded_docs
