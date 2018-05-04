@@ -9,7 +9,7 @@ from keras.layers import Flatten
 from keras.layers import Embedding
 import os
 
-def get_glove_m(docs, labels):
+def get_glove_m(docs):
     # prepare tokenizer
     t = Tokenizer()
     t.fit_on_texts(docs)
